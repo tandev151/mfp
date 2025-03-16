@@ -27,7 +27,7 @@ jobs:
         uses: docker/setup-buildx-action@v1
 
       - name: Access Amazon Web Services
-        uses: chrislennon/action-aws-cli@v1.2.0
+        uses: shinyinc/action-aws-cli@v1.2
 
       - name: Sync dist
         run: aws s3 sync dist s3://{{ secrets.AWS_S3_BUCKET_NAME}}/container/latest
