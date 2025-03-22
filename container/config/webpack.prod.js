@@ -10,7 +10,8 @@ const prodWebpackConfig = {
 
   output: {
     filename: '[name].[chunkhash:5].bundle.js',
-    clean: true
+    clean: true,
+    publicPath: '/container/latest/'
   },
 
   plugins: [
