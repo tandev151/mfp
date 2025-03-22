@@ -10,7 +10,8 @@ const prodWebpackConfig = {
   output: {
     // filename: '[name:1].[chunkhash:1].js',
     filename: '[name].[chunkhash:5].bundle.js',
-    publicPath: 'marketing/latest/',
+    // publicPath: 'marketing/latest/',
+    publicPath: 'http://web-mfe.local.vn/marketing/latest/', // Map to your host
     clean: true
   },
 
