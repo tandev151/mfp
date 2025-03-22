@@ -1,9 +1,10 @@
 import React from 'react';
-import MarketingApp from './containers/MarketingApp';
+import MarketingApp from './components/MarketingApp';
+import Header from './components/Header';
 const App = () => {
   return (
     <div>
-      <h1>Container</h1>
+      <Header />
       <MarketingApp />
     </div>
   );
