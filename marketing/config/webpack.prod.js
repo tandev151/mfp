@@ -4,21 +4,22 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const commonWebpackConfig = require('./webpack.common.js');
 const packageJson = require('../package.json');
 
+const domain = process.env.PRODUCTION_DOMAIN || 'http://localhost:8081/'; // Default to localhost for testing
 const prodWebpackConfig = {
   mode: 'production',
 
   output: {
     // filename: '[name:1].[chunkhash:1].js',
-    filename: '[name].[chunkhash:5].bundle.js',
+    filename: 'marketing.[name].[chunkhash:5].bundle.js',
     // publicPath: 'marketing/latest/',
-    publicPath: 'http://web-mfe.local.vn/marketing/latest/', // Map to your host
+    publicPath: `${domain}marketing/`, // Map to your host
     clean: true
   },
 
   plugins: [
     new CleanWebpackPlugin(),
     new ModuleFederationPlugin({
-      name: 'container',
+      name: 'marketing',
       filename: 'remoteEntry.js',
       exposes: {
         './MarketingApp': './src/bootstrap.js'
